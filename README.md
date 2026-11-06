@@ -27,3 +27,12 @@ A user format can implement the same two traits and inspect fields through
 [comma codec](../../tests/fixtures/reflection_codecs/custom/src/lib.enq) for
 encoding and typed construction with `reflect::Builder`, without JSON or a
 common format backend.
+
+## SDK development
+
+Encore pins this package as a Git submodule. Clone the complete SDK with
+`git clone --recurse-submodules --branch trunk https://github.com/encore-ecosystem/encore.git`
+and edit this package under `packages/serialize/`. Sibling `path@` dependencies
+are resolved from that checkout. Encore CI tests the exact package commits
+with the compiler on all supported native targets. Published package archives
+rewrite path dependencies to exact index versions.
